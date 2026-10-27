@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #051125;
+    --primary-container: #1b263b;
+    --secondary: #775a19;
+    --secondary-container: #fed488;
+    --background: #f7f9ff;
+    --surface-lowest: #ffffff;
+    --surface-low: #f1f4f9;
+    --surface-container: #ebeef3;
+    --surface-high: #e5e8ee;
+    --on-surface: #181c20;
+    --on-surface-variant: #45474d;
+    --outline: #75777d;
+    --outline-variant: #c5c6cd;
+  }
+
+  body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f9f8f4;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    color: #181c20;
+  }
+
+  h1, h2, h3, .font-serif-legal {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+  }
+}
+
+/* Gold Gradient Accents matching Legacy Judicial Design System */
+.gold-accent {
+  background: linear-gradient(135deg, #dfc282 0%, #a8843c 100%);
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #dfc282 0%, #a8843c 100%) 1;
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #8a651e 0%, #5d4201 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Classical Judicial Triple Line Divider */
+.divider-triple {
+  border-top: 1px solid #051125;
+  position: relative;
+  margin: 2rem 0;
+}
+.divider-triple::before,
+.divider-triple::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #051125;
+}
+.divider-triple::before {
+  top: -4px;
+  border-top-width: 2px;
+}
+.divider-triple::after {
+  top: -7px;
+}
+
+/* Print Styles for Ticket Pass */
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

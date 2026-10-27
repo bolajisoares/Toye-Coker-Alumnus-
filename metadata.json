@@ -1,0 +1,6 @@
+{
+  "name": "Chief Toye Coker Memorial & Legal Colloquium",
+  "description": "Official portal for the Chief Toye Coker, SAN, OON Annual Memorial Lecture & Legal Colloquium, alumni directory, endowment fund, and judicial archive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toye Coker Alumnus - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#8b8d8e",
+                      "inverse-primary": "#bbc6e2",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#261900",
+                      "background": "#f7f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#051125",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#828da7",
+                      "on-primary-fixed-variant": "#3c475d",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "secondary-container": "#fed488",
+                      "secondary": "#775a19",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#ffdea5",
+                      "on-surface-variant": "#45474d",
+                      "tertiary-fixed": "#e1e3e4",
+                      "outline": "#75777d",
+                      "tertiary-container": "#232627",
+                      "surface-tint": "#545e76",
+                      "surface-container-high": "#e5e8ee",
+                      "outline-variant": "#c5c6cd",
+                      "surface-container": "#ebeef3",
+                      "on-primary-fixed": "#101b30",
+                      "surface-container-highest": "#e0e3e8",
+                      "surface-dim": "#d7dadf",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#d7e2ff",
+                      "surface-container-low": "#f1f4f9",
+                      "surface": "#f7f9ff",
+                      "on-secondary-container": "#785a1a",
+                      "inverse-surface": "#2d3135",
+                      "on-surface": "#181c20",
+                      "inverse-on-surface": "#eef1f6",
+                      "secondary-fixed-dim": "#e9c176",
+                      "primary-fixed-dim": "#bbc6e2",
+                      "tertiary": "#0f1112",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1b263b",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "on-tertiary-fixed": "#191c1d",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "surface-bright": "#f7f9ff",
+                      "surface-variant": "#e0e3e8",
+                      "on-background": "#181c20"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "unit-xs": "4px",
+                      "unit-xl": "64px",
+                      "margin-desktop": "64px",
+                      "unit-lg": "32px",
+                      "container-max": "1200px",
+                      "unit-sm": "8px",
+                      "gutter": "24px",
+                      "unit-md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Libre Caslon Text"],
+                      "headline-lg": ["Libre Caslon Text"],
+                      "title-lg": ["Work Sans"],
+                      "headline-lg-mobile": ["Libre Caslon Text"],
+                      "body-lg": ["Work Sans"],
+                      "label-caps": ["Work Sans"],
+                      "headline-md": ["Libre Caslon Text"],
+                      "body-md": ["Work Sans"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                      "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                      "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                      "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                      "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                      "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Style Guidance: Inputs */
+        input[type="text"], input[type="file"], select {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #45474d; /* on-surface-variant approx */
+            border-radius: 0;
+            padding: 8px 0;
+        }
+        input[type="text"]:focus, select:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #051125; /* primary */
+        }
+        /* Hide scrollbar for a cleaner look but keep functionality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f7f9ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5c6cd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex h-screen overflow-hidden antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden lg:flex flex-col fixed left-0 top-0 h-screen w-64 border-r border-outline-variant bg-surface-container-low py-unit-md z-50">
+<!-- Header -->
+<div class="px-gutter mb-unit-lg flex flex-col items-start gap-unit-sm">
+<div class="w-16 h-16 rounded-full border border-secondary overflow-hidden shrink-0">
+<img alt="Official Toye Coker Alumnus Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF2oJphaHzUmz-ekHF3EnIXkz-rhYlD4nuPEJwDjYI1pc5WcHk3SeHrMa7YtSL7ds9yRhqs0XS-3fYSJobBr7raMpfUO-PpOti4HbKbEtgTZOR1fjLD5h1iSmxYoKmoBXdnIJt-zCoxT-xHRRESFRqYuBmhfcqpfS42sLSl2p_6B-g4aB99YemrwCN5belH1J-WnkoDIA98rFUpzGfg9dyXhJh7KShY0w-4fXRh_AgLgKllSa4qejBuQ"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">ALUMNUS PORTAL</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Internal Access</p>
+</div>
+</div>
+<!-- Links -->
+<ul class="flex-1 flex flex-col gap-unit-xs">
+<li class="">
+<a class="flex items-center gap-unit-md py-3 px-4 bg-secondary-container text-on-secondary-container font-bold rounded-lg mx-2 transition-all scale-98" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-unit-md py-3 px-4 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-all font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="">Library</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-unit-md py-3 px-4 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-all font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">upload_file</span>
+<span class="">File Upload</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-unit-md py-3 px-4 text-on-surface-variant hover:bg-surface-container-high mx-2 transition-all font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="">Settings</span>
+</a>
+</li>
+</ul>
+<!-- Motto Bar specific to this context -->
+<div class="mt-auto px-unit-sm">
+<div class="bg-secondary text-on-secondary py-2 text-center border border-primary text-[10px] uppercase tracking-[0.15em] font-bold">
+                LEGACY • INTEGRITY • TRADITION
+            </div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 flex flex-col h-screen overflow-y-auto bg-background">
+<!-- Page Header -->
+<header class="w-full px-margin-mobile lg:px-margin-desktop py-unit-lg border-b border-outline-variant bg-surface-bright sticky top-0 z-40">
+<div class="max-w-container-max mx-auto flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary tracking-tight">Archive Dashboard</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage library resources and member directory.</p>
+</div>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary rounded-none border-b border-secondary px-6 py-3 font-label-caps text-label-caps tracking-widest hover:bg-surface-tint transition-colors">
+                        GENERATE REPORT
+                    </button>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="p-margin-mobile lg:p-margin-desktop max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Admin Upload Panel (Spans 8 cols) -->
+<section class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant p-unit-lg shadow-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-unit-sm mb-unit-md">
+<h3 class="font-headline-lg text-headline-lg text-primary">Upload Resource</h3>
+<span class="material-symbols-outlined text-secondary">cloud_upload</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Form Fields -->
+<div class="flex flex-col gap-unit-md">
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Document Title</label>
+<input placeholder="e.g., 1998 Judicial Review" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Speaker / Author</label>
+<input placeholder="Hon. Justice Name" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Category</label>
+<select class="text-on-surface font-body-md bg-transparent">
+<option>The Bench (Judicial)</option>
+<option>The Bar (Advocacy)</option>
+<option>General Archive</option>
+</select>
+</div>
+</div>
+<!-- Drag & Drop Zone -->
+<div class="border-2 border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center p-unit-lg text-center cursor-pointer hover:bg-surface-container transition-colors min-h-[200px]">
+<span class="material-symbols-outlined text-[48px] text-surface-tint mb-4">note_add</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Drag and drop PDF or Audio files here</p>
+<p class="font-label-caps text-label-caps text-outline mt-2">or click to browse</p>
+</div>
+</div>
+<div class="mt-unit-lg flex justify-end">
+<button class="bg-primary text-on-primary rounded-none border-b border-secondary px-8 py-3 font-label-caps text-label-caps tracking-widest hover:bg-surface-tint transition-colors">
+                        COMMIT TO ARCHIVE
+                    </button>
+</div>
+</section>
+<!-- Sticky QR Donation Widget (Spans 4 cols) -->
+<section class="lg:col-span-4 bg-primary text-on-primary border border-secondary p-unit-lg flex flex-col items-center text-center relative overflow-hidden group">
+<!-- Decorative accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-10 rounded-bl-full pointer-events-none"></div>
+<span class="material-symbols-outlined text-secondary text-[32px] mb-2" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md font-bold mb-1">Support the Legacy</h3>
+<p class="font-body-md text-body-md text-inverse-primary mb-unit-lg opacity-80">Contributions maintain the integrity of our digital archives.</p>
+<div class="bg-surface-container-lowest p-2 border border-secondary shrink-0 mb-unit-md">
+<img class="w-48 h-48 object-contain" data-alt="A sharp, high-contrast, perfectly square QR code rendered in deep navy blue on a bright white background, symbolizing modern digital access within a traditional institutional setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEAmFbQOo9Nl-vVbZpZL3sxIrUPq4JBc8vWzzxe2TSp7I4YQNpVs6ECD6_yfDW4IpbuAcqGZDyyF71pzVgP5uy6ev0g2kOu5LkNsrYqc5FnpwoBrbgz6hag0r-7Rc1mcfg6w2di_Y6w9NSU1kfPPhcZI_WOIc1UcBz2xy7XhmrE1T8Lg63pakC9DJ3CHfhvWE2smh4ea9mpVvFz6rXCYKy2va9Ho5izB37SKbE6NzSuypUMCH2w0HE2A"/>
+</div>
+<div class="w-full h-px bg-on-primary-fixed-variant my-unit-sm"></div>
+<p class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">ENDOWMENT FUND</p>
+</section>
+<!-- Lecture Library Table (Spans 12 cols) -->
+<section class="lg:col-span-12 bg-surface-container-lowest border border-outline-variant shadow-sm mt-unit-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between p-unit-md border-b border-outline-variant gap-4 bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg text-primary">Library Catalog</h3>
+<!-- Filters -->
+<div class="flex gap-2 font-label-caps text-label-caps">
+<button class="px-4 py-2 bg-primary text-on-primary border-b border-secondary">All Records</button>
+<button class="px-4 py-2 border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors">The Bench</button>
+<button class="px-4 py-2 border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors">The Bar</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-primary border-double">
+<th class="py-4 px-unit-md font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Document Title</th>
+<th class="py-4 px-unit-md font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Author / Speaker</th>
+<th class="py-4 px-unit-md font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="py-4 px-unit-md font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Category</th>
+<th class="py-4 px-unit-md text-right font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-unit-md font-bold text-primary">Constitutional Precedents 2010</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Chief Justice A. O. Coker</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Oct 12, 2010</td>
+<td class="py-4 px-unit-md">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-caps text-label-caps px-2 py-1 rounded-sm">BENCH</span>
+</td>
+<td class="py-4 px-unit-md text-right">
+<button aria-label="Preview PDF" class="text-secondary hover:text-primary transition-colors flex justify-end w-full">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-unit-md font-bold text-primary">Ethics in Advocacy Panel</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Senior Advocates Forum</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Mar 05, 2018</td>
+<td class="py-4 px-unit-md">
+<span class="inline-block bg-surface-variant text-on-surface-variant font-label-caps text-label-caps px-2 py-1 rounded-sm border border-outline-variant">BAR</span>
+</td>
+<td class="py-4 px-unit-md text-right">
+<button aria-label="Listen Audio" class="text-secondary hover:text-primary transition-colors flex justify-end w-full">
+<span class="material-symbols-outlined">headphones</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-unit-md font-bold text-primary">Annual General Meeting Minutes</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Secretariat</td>
+<td class="py-4 px-unit-md text-on-surface-variant">Nov 20, 2023</td>
+<td class="py-4 px-unit-md">
+<span class="inline-block bg-background text-on-surface font-label-caps text-label-caps px-2 py-1 rounded-sm border border-outline">GENERAL</span>
+</td>
+<td class="py-4 px-unit-md text-right">
+<button aria-label="Preview PDF" class="text-secondary hover:text-primary transition-colors flex justify-end w-full">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Footer Component (From JSON) -->
+<footer class="w-full flex flex-col items-center justify-center text-center px-margin-desktop border-t border-outline-variant mt-auto border-t-4 border-double border-primary bg-background py-unit-lg">
+<p class="font-label-caps text-label-caps text-secondary mb-unit-sm">LEGACY • INTEGRITY • TRADITION</p>
+<p class="font-body-md text-body-md text-on-surface mb-unit-sm">© TOYE COKER ALUMNUS | LEGACY • INTEGRITY • TRADITION</p>
+<div class="flex flex-col md:flex-row gap-4 font-body-md text-body-md text-on-surface">
+<a class="hover:text-secondary underline transition-all" href="#">Tel: +234 803 680 5245</a>
+<span class="hidden md:inline text-outline-variant">|</span>
+<a class="hover:text-secondary underline transition-all" href="#">+234 803 337 7769</a>
+<span class="hidden md:inline text-outline-variant">|</span>
+<a class="hover:text-secondary underline transition-all" href="#">Email: toyecokeralmnus@gmail.com</a>
+</div>
+</footer>
+</main>
+<!-- PDF Preview Modal (Hidden Template) -->
+<div class="fixed inset-0 z-[100] bg-tertiary bg-opacity-80 hidden flex items-center justify-center p-margin-mobile md:p-margin-desktop backdrop-blur-sm" id="pdf-modal">
+<div class="bg-surface-container-lowest w-full max-w-4xl h-[819px] border border-secondary shadow-2xl flex flex-col">
+<div class="bg-primary text-on-primary p-4 flex justify-between items-center border-b border-secondary">
+<h4 class="font-headline-md text-headline-md">Document Preview</h4>
+<button class="text-on-primary hover:text-secondary transition-colors" onclick="document.getElementById('pdf-modal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 bg-surface-container flex items-center justify-center">
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[32px]">pending</span>
+                    PDF Viewer Implementation Required
+                </p>
+</div>
+</div>
+</div>
+</body></html>
